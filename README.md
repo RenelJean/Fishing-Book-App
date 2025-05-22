@@ -34,6 +34,6 @@ A social Fishing Book mobile app where anglers log catches (with species, weight
 ## Getting Started
 1. Clone the repo  
    ```bash
-   git clone https://github.com/yourusername/fishing-book-app.git
+   git clone https://github.com/RenelJean/fishing-book-app.git
    cd fishing-book-app
 
