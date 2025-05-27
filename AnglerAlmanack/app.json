@@ -2,10 +2,11 @@
   "expo": {
     "name": "AnglerAlmanack",
     "slug": "AnglerAlmanack",
+    "scheme": "angleralmanack",
+    "description": "A comprehensive app for anglers, providing fishing reports, weather updates, and more.",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "angleralmanack",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {

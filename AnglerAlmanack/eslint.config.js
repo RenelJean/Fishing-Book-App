@@ -2,9 +2,17 @@
 const { defineConfig } = require('eslint/config');
 const expoConfig = require('eslint-config-expo/flat');
 
+
 module.exports = defineConfig([
   expoConfig,
   {
     ignores: ['dist/*'],
+      parser: '@babel/eslint-parser',
+  parserOptions: {
+    requireConfigFile: false,
+    babelOptions: {
+      configFile: './babel.config.json',
+    },
+  },
   },
 ]);

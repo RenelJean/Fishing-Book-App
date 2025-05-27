@@ -2,6 +2,8 @@ import { signOut } from 'firebase/auth';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { auth } from '../services/firebaseConfig';
 
+
+
 export default function HomeScreen() {
   const handleLogout = () => {
     signOut(auth);
@@ -9,9 +11,10 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome to Fishing Book</Text>
+      <Text style={styles.title}>Welcome to The Angler Almanack</Text>
       <Text style={styles.subtitle}>Your personal fishing journal</Text>
       <Button title="Logout" color="#a57c49" onPress={handleLogout} />
+      
     </View>
   );
 }
