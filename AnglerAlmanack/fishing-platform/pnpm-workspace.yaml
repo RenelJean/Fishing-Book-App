@@ -1,0 +1,7 @@
+packages:
+  - apps/mobile
+  - apps/web
+  - apps/api
+  - packages/ui
+  - packages/services
+  - features/trophy

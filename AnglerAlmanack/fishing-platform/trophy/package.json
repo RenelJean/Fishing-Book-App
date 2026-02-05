@@ -1,0 +1,42 @@
+{
+  "name": "trophy",
+  "version": "1.0.0",
+  "description": "Feature package for managing trophies in the fishing platform.",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-native": "^0.64.2",
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.5",
+    "jest": "^27.0.6",
+    "@types/jest": "^27.0.1",
+    "@types/react": "^17.0.2",
+    "@types/react-native": "^0.64.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-native": "^0.64.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RenelJean/Fishing-Book-App.git"
+  },
+  "keywords": [
+    "fishing",
+    "trophy",
+    "expo",
+    "react-native"
+  ],
+  "author": "Renel Jean",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RenelJean/Fishing-Book-App/issues"
+  },
+  "homepage": "https://github.com/RenelJean/Fishing-Book-App#readme"
+}

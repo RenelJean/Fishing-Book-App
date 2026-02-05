@@ -1,0 +1,20 @@
+FROM node:16
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json (or yarn.lock)
+COPY apps/api/package.json ./
+COPY apps/api/package-lock.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code
+COPY apps/api/src ./src
+
+# Expose the API port
+EXPOSE 3000
+
+# Command to run the application
+CMD ["node", "src/server.js"]

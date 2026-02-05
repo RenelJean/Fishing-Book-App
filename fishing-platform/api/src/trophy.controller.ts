@@ -1,0 +1,65 @@
+import { Request, Response } from 'express';
+import { Trophy } from '../models/trophy.model';
+
+// Get all trophies
+export const getTrophies = async (req: Request, res: Response) => {
+    try {
+        const trophies = await Trophy.find();
+        res.status(200).json(trophies);
+    } catch (error) {
+        res.status(500).json({ message: 'Error fetching trophies', error });
+    }
+};
+
+// Get a trophy by ID
+export const getTrophyById = async (req: Request, res: Response) => {
+    const { id } = req.params;
+    try {
+        const trophy = await Trophy.findById(id);
+        if (!trophy) {
+            return res.status(404).json({ message: 'Trophy not found' });
+        }
+        res.status(200).json(trophy);
+    } catch (error) {
+        res.status(500).json({ message: 'Error fetching trophy', error });
+    }
+};
+
+// Create a new trophy
+export const createTrophy = async (req: Request, res: Response) => {
+    const newTrophy = new Trophy(req.body);
+    try {
+        const savedTrophy = await newTrophy.save();
+        res.status(201).json(savedTrophy);
+    } catch (error) {
+        res.status(400).json({ message: 'Error creating trophy', error });
+    }
+};
+
+// Update a trophy
+export const updateTrophy = async (req: Request, res: Response) => {
+    const { id } = req.params;
+    try {
+        const updatedTrophy = await Trophy.findByIdAndUpdate(id, req.body, { new: true });
+        if (!updatedTrophy) {
+            return res.status(404).json({ message: 'Trophy not found' });
+        }
+        res.status(200).json(updatedTrophy);
+    } catch (error) {
+        res.status(400).json({ message: 'Error updating trophy', error });
+    }
+};
+
+// Delete a trophy
+export const deleteTrophy = async (req: Request, res: Response) => {
+    const { id } = req.params;
+    try {
+        const deletedTrophy = await Trophy.findByIdAndDelete(id);
+        if (!deletedTrophy) {
+            return res.status(404).json({ message: 'Trophy not found' });
+        }
+        res.status(204).send();
+    } catch (error) {
+        res.status(500).json({ message: 'Error deleting trophy', error });
+    }
+};

@@ -1,0 +1,33 @@
+{
+  "name": "fishing-platform",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "expo start",
+    "build": "expo build",
+    "lint": "eslint .",
+    "test": "jest"
+  },
+  "dependencies": {
+    "expo": "~48.0.0",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-native": "0.71.0",
+    "react-navigation": "^6.0.0",
+    "axios": "^0.27.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-native": "^0.71.0",
+    "eslint": "^8.0.0",
+    "jest": "^27.0.0",
+    "typescript": "^4.5.0"
+  },
+  "jest": {
+    "preset": "react-native",
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": "babel-jest"
+    }
+  }
+}
