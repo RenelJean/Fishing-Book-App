@@ -7,7 +7,7 @@ Trophy Angler is a professional fishing platform built with a **Universal Expo A
 - 📱 **Android**: Native app with offline logging and GPS  
 - 🌐 **Web**: SEO-optimized platform for public trophy sharing
 
-This architecture enables you to build and scale a complete platform as a solo developer.
+<!--This architecture enables you to build and scale a complete platform as a solo developer.
 
 ---
 
@@ -23,7 +23,7 @@ Instead of duplicating code across platforms, we define features once in a platf
 - **Types** live in `/src/types` → single source of truth for data structures
 
 ---
-
+-->
 ## Folder Structure
 
 ```
@@ -158,7 +158,7 @@ npm run web
 ```
 
 ---
-
+<!--
 ## The "Tweak Manual"
 
 To maintain the codebase as a solo developer, follow this pattern for feature expansion:
@@ -312,7 +312,7 @@ app/
 - [React Native Web](https://necolas.github.io/react-native-web/)
 
 ---
-
+-->
 ## Questions?
 
 This architecture is designed for maximum flexibility as a solo developer. Each layer is decoupled:
