@@ -179,7 +179,7 @@ AnglerAlmanack/
 ```
 
 ---
-
+<!--
 ## 🎯 The Growth Loop
 
 ```
@@ -335,5 +335,5 @@ Follow [Expo's deployment guide](https://docs.expo.dev/submit/introduction/) for
 3. **Follow the 7-phase setup** to build authentication and catch recording
 4. **Test on actual devices** (iOS/Android) and web
 5. **Reference [ARCHITECTURE.md](./ARCHITECTURE.md)** when adding features
-
+-->
 Good luck building Trophy Angler! 🎣
