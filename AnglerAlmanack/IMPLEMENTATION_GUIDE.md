@@ -167,7 +167,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- Create triggers for updated_at
-CREATE TRIGGER update_users_updated_at BEFORE UPDATE ON public.users
+CREATE TRIGGER update_users_updated_at BEFORE UPDATE ON app.users
   FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 ```
 
@@ -176,7 +176,7 @@ Verify in Supabase:
 - Should see `trophies` and `users` tables
 - Go to **SQL** → Run a test query:
 ```sql
-SELECT * FROM public.trophies LIMIT 1;
+SELECT * FROM app.trophies LIMIT 1;
 ```
 
 ---

@@ -35,12 +35,30 @@ if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
  * Singleton Supabase client instance
  * Use this throughout the app for all database operations
  */
-export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+export type Database = {
+  app: {
+    Tables: {
+      trophies: {
+        Row: Trophy;
+        Insert: Omit<Trophy, 'id' | 'created_at' | 'updated_at'>;
+        Update: Partial<Trophy>;
+      };
+      users: {
+        Row: User;
+        Insert: Omit<User, 'id' | 'created_at' | 'updated_at'>;
+        Update: Partial<User>;
+      };
+    };
+  };
+};
+
+export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 /**
  * Type definitions for our database schema
  * Mirrors the actual Supabase tables
- */
+ 
 export type Database = {
   public: {
     Tables: {
@@ -57,7 +75,7 @@ export type Database = {
     };
   };
 };
-
+*/
 /**
  * Helper function to fetch a single trophy by ID
  * Includes PostGIS distance calculations if needed
@@ -68,7 +86,7 @@ export type Database = {
 export async function fetchTrophyById(trophyId: string): Promise<Trophy | null> {
   try {
     const { data, error } = await supabase
-      .from('trophies')
+      .from('app.trophies')
       .select('*')
       .eq('id', trophyId)
       .eq('is_public', true) // Only return public trophies for web
@@ -100,7 +118,7 @@ export async function fetchUserPublicTrophies(
 ): Promise<Trophy[]> {
   try {
     const { data, error } = await supabase
-      .from('trophies')
+      .from('app.trophies')
       .select('*')
       .eq('user_id', userId)
       .eq('is_public', true)
@@ -138,7 +156,7 @@ export async function findNearbyTrophies(
 ): Promise<Trophy[]> {
   try {
     const { data, error } = await supabase
-      .rpc('find_nearby_trophies', {
+      .rpc('app.find_nearby_trophies', {
         lat: latitude,
         lon: longitude,
         radius_km: radiusKm
