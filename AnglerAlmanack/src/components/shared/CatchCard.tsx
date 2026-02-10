@@ -12,7 +12,7 @@
 
 import { View, Text, Image, StyleSheet, Platform } from 'react-native';
 import { Ruler, MapPin, Calendar } from 'lucide-react-native';
-import type { Trophy } from '../types/trophy';
+import type { Trophy } from '../../types/trophy';
 
 interface CatchCardProps {
   trophy: Trophy;
@@ -57,7 +57,7 @@ export const CatchCard = ({
           styles.image,
           variant === 'compact' && styles.compactImage
         ]}
-        contentFit="cover"
+        resizeMode="cover"
       />
 
       {/* Content Section */}

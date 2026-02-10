@@ -30,6 +30,9 @@ if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
   );
 }
 
+console.log("URL:", process.env.EXPO_PUBLIC_SUPABASE_URL);
+console.log("KEY:", process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY);
+
 /**
  * @type {SupabaseClient}
  * Singleton Supabase client instance
